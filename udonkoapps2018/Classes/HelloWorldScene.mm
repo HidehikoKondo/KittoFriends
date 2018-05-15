@@ -1,5 +1,12 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
+#include "json/document.h"
+#include "json/prettywriter.h"
+#include "json/rapidjson.h"
+#include "json/stringbuffer.h"
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#import <Foundation/Foundation.h>
+#endif
 
 USING_NS_CC;
 
@@ -24,10 +31,27 @@ bool HelloWorld::init()
     {
         return false;
     }
-
+    
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
+    
+    // RapidJSON example
+    auto json = "{ \"hoge\" : \"foobar\" }";
+    rapidjson::Document document;
+    document.Parse<rapidjson::ParseFlag::kParseDefaultFlags>(json);
+    rapidjson::Value& value = document["hoge"];
+    CCLOG("@@ %s %s", value.GetString(), __FUNCTION__);
+    
+    // Convert std::string -> NSString
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    std::string str = buffer.GetString();
+    NSString *nsStr = [NSString stringWithUTF8String:str.c_str()];
+    auto jsonLabel = cocos2d::Label::createWithSystemFont([nsStr UTF8String], "Helvetica", 36);
+    jsonLabel->setPosition(visibleSize / 2);
+    this->addChild(jsonLabel);
+    
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
@@ -78,6 +102,7 @@ bool HelloWorld::init()
     }
 
     // add "HelloWorld" splash screen"
+    /*
     auto sprite = Sprite::create("HelloWorld.png");
     if (sprite == nullptr)
     {
@@ -91,6 +116,8 @@ bool HelloWorld::init()
         // add the sprite as a child to this layer
         this->addChild(sprite, 0);
     }
+     */
+    
     return true;
 }
 
