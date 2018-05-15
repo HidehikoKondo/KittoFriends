@@ -1,5 +1,7 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
+#include "json/rapidjson.h"
+#include "json/document.h"
 
 USING_NS_CC;
 
@@ -24,6 +26,13 @@ bool HelloWorld::init()
     {
         return false;
     }
+    
+    // RapidJSON example
+    auto json = "{ \"hoge\" : \"foobar\" }";
+    rapidjson::Document document;
+    document.Parse<rapidjson::ParseFlag::kParseDefaultFlags>(json);
+    rapidjson::Value& value = document["hoge"];
+    CCLOG("@@ %s %s", value.GetString(), __FUNCTION__);
 
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
