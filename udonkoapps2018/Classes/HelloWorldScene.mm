@@ -1,5 +1,7 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
+
+#include "network/HttpClient.h"
 #include "json/document.h"
 #include "json/prettywriter.h"
 #include "json/rapidjson.h"
@@ -52,6 +54,28 @@ bool HelloWorld::init()
     jsonLabel->setPosition(visibleSize / 2);
     this->addChild(jsonLabel);
     
+    // POST
+    auto request = new cocos2d::network::HttpRequest();
+    std::string url = "http://localhost/";
+    request->setUrl(url.c_str());
+    request->setRequestType(cocos2d::network::HttpRequest::Type::POST);
+    request->setResponseCallback([this](cocos2d::network::HttpClient* client, cocos2d::network::HttpResponse* response)
+    {
+        CCLOG("@@ ResponseCode:%ld %s", response->getResponseCode(), response->getHttpRequest()->getUrl());
+        
+        if (response->isSucceed())
+        {
+            std::vector<char> * buffer = response->getResponseData();
+            std::string s;
+            std::copy(buffer->begin(), buffer->end(), std::back_inserter(s));
+            CCLOG("@@ s: %s", s.c_str());
+        }
+    });
+    auto client = cocos2d::network::HttpClient::getInstance();
+    client->enableCookies(nullptr);
+    client->send(request);
+
+
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
