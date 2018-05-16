@@ -27,11 +27,6 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
-// FIXME: linker error
-/*
- ld: warning: directory not found for option '-L/Users/yamauchi/Library/Developer/Xcode/DerivedData/udonkoapps2018-eyouozlyibengtfhtadekuhaixpd/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac'
-ld: warning: directory not found for option '-L/Users/yamauchi/Library/Developer/Xcode/DerivedData/udonkoapps2018-eyouozlyibengtfhtadekuhaixpd/Build/Products/Debug-iphonesimulator/nanopb'
- */
 @import Firebase;
 
 @implementation AppController
