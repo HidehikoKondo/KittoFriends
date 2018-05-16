@@ -27,6 +27,7 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+@import Firebase;
 
 @implementation AppController
 
@@ -78,6 +79,8 @@ static AppDelegate s_sharedApplication;
     
     //run the cocos2d-x game scene
     app->run();
+
+    [FIRApp configure];
 
     return YES;
 }

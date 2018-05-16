@@ -17,7 +17,7 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-
+    NSLog(@"objective-c");
     // Configure interface objects here.
 }
 
