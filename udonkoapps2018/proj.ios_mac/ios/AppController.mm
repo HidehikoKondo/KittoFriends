@@ -27,8 +27,6 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "MabeeeViewController.h"
-#import <MaBeeeSDK/MaBeeeSDK.h>
 
 @implementation AppController
 
@@ -82,8 +80,6 @@ static AppDelegate s_sharedApplication;
     app->run();
 
 
-    MaBeeeScanViewController *vc = [[MaBeeeScanViewController alloc]init];
-    [_viewController presentViewController:vc animated:YES completion:nil];
 
     return YES;
 }

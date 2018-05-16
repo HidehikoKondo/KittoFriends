@@ -27,6 +27,8 @@
 #import "cocos2d.h"
 #import "platform/ios/CCEAGLView-ios.h"
 
+#import "MabeeeViewController.h"
+#import <MaBeeeSDK/MaBeeeSDK.h>
 
 @implementation RootViewController
 
@@ -61,7 +63,29 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self createButton];
 }
+
+- (void)createButton{
+    //MaBeee接続画面へ遷移するボタン
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(10, 10, 100, 30);
+    [btn setTitle:@"MaBeee" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(scanMabeee:) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:btn];
+}
+
+- (void)scanMabeee:(id)object{
+    MaBeeeScanViewController *vc = [[MaBeeeScanViewController alloc]init];
+    [self presentViewController:vc animated:YES completion:nil];
+
+//こんな感じで接続中のMaBeeeの設定値を適用する
+//    for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
+//        device.pwmDuty = 100;
+//    }
+}
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
