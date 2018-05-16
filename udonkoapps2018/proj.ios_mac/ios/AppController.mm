@@ -29,6 +29,12 @@
 #import "RootViewController.h"
 #import "MabeeeViewController.h"
 #import <MaBeeeSDK/MaBeeeSDK.h>
+// FIXME: linker error
+/*
+ ld: warning: directory not found for option '-L/Users/yamauchi/Library/Developer/Xcode/DerivedData/udonkoapps2018-eyouozlyibengtfhtadekuhaixpd/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac'
+ld: warning: directory not found for option '-L/Users/yamauchi/Library/Developer/Xcode/DerivedData/udonkoapps2018-eyouozlyibengtfhtadekuhaixpd/Build/Products/Debug-iphonesimulator/nanopb'
+ */
+@import Firebase;
 
 @implementation AppController
 
@@ -84,7 +90,9 @@ static AppDelegate s_sharedApplication;
 
     MaBeeeScanViewController *vc = [[MaBeeeScanViewController alloc]init];
     [_viewController presentViewController:vc animated:YES completion:nil];
-
+    
+    [FIRApp configure];
+    
     return YES;
 }
 
