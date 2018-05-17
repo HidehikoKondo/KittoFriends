@@ -11,6 +11,7 @@ public:
     virtual bool init();
 
     void menuAction();
+    void speech();
 
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);

@@ -32,6 +32,7 @@
 }
 
 @property(nonatomic, readonly) RootViewController* viewController;
+- (void)speech:(NSString *)message;
 
 @end
 

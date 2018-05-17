@@ -4,6 +4,11 @@
 #include "json/prettywriter.h"
 #include "json/rapidjson.h"
 #include "json/stringbuffer.h"
+
+#include "NativeInterface.h"
+
+#include "SimpleAudioEngine.h"
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #import <Foundation/Foundation.h>
 #endif
@@ -119,20 +124,23 @@ bool HelloWorld::init()
      */
 
 
-    //Ver3.x
-    auto labelBtnLabel = LabelTTF::create("ラベルボタン", "Arial", 15);
+    //メニュー
+    auto labelBtnLabel = LabelTTF::create("しゃべるボタン", "Arial", 15);
     auto labelItem1 = MenuItemLabel::create(labelBtnLabel, CC_CALLBACK_0(HelloWorld::menuAction, this));
-
-    //後は同じ
     auto menu2 = Menu::create(labelItem1,NULL);
     this->addChild(menu2);
-
+    
     return true;
 }
 
+void HelloWorld::speech(){
+    //なんかしゃべる
+    cocos2dExt::NativeInterface::speech("あいうえお");
+}
 
 void HelloWorld::menuAction(){
     CCLOG("Hello!!");
+    this->speech();
 }
 
 void HelloWorld::menuCloseCallback(Ref* pSender)

@@ -28,6 +28,11 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 
+
+#import "NativeInterface_iOS.h"
+#import "AVFoundation/AVFoundation.h"
+
+
 @implementation AppController
 
 @synthesize window;
@@ -143,6 +148,16 @@ static AppDelegate s_sharedApplication;
     [super dealloc];
 }
 #endif
+
+//読み上げてるメソッド
+- (void)speech:(NSString *)message
+{
+    NSLog(message);
+    AVSpeechSynthesizer* speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
+    NSString* speakingText = message;
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:speakingText];
+    [speechSynthesizer speakUtterance:utterance];
+}
 
 
 @end

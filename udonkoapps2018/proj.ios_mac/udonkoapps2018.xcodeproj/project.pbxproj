@@ -17,6 +17,9 @@
 		060C4CEF2053B11200316300 /* WatchKit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 060C4CCF2053B11200316300 /* WatchKit.app */; };
 		060C4CFA2053B1D400316300 /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060C4CF82053B1D300316300 /* WatchKit.framework */; };
 		060C4CFB2053B1D400316300 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060C4CF92053B1D300316300 /* WatchConnectivity.framework */; };
+		06150A3820ADAAF300E04977 /* NativeInterface_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 06150A3420ADAAF300E04977 /* NativeInterface_iOS.mm */; };
+		06150A3920ADAAF300E04977 /* NativeInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = 06150A3620ADAAF300E04977 /* NativeInterface.mm */; };
+		06150A3C20ADABD900E04977 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06150A3B20ADABD900E04977 /* Speech.framework */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -190,6 +193,12 @@
 		060C4CEC2053B11200316300 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		060C4CF82053B1D300316300 /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/WatchKit.framework; sourceTree = DEVELOPER_DIR; };
 		060C4CF92053B1D300316300 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		06150A3420ADAAF300E04977 /* NativeInterface_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeInterface_iOS.mm; sourceTree = "<group>"; };
+		06150A3520ADAAF300E04977 /* NativeInterface_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeInterface_iOS.h; sourceTree = "<group>"; };
+		06150A3620ADAAF300E04977 /* NativeInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeInterface.mm; sourceTree = "<group>"; };
+		06150A3720ADAAF300E04977 /* NativeInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeInterface.h; sourceTree = "<group>"; };
+		06150A3A20ADAB7400E04977 /* PrivateConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivateConfig.h; sourceTree = "<group>"; };
+		06150A3B20ADABD900E04977 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Speech.framework; sourceTree = DEVELOPER_DIR; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -270,6 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06150A3C20ADABD900E04977 /* Speech.framework in Frameworks */,
 				9AF7ED9E20ABDF2800EAAA0D /* MaBeeeSDK.framework in Frameworks */,
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
@@ -336,6 +346,16 @@
 			path = "WatchKit Extension";
 			sourceTree = "<group>";
 		};
+		06150A3320ADAAF300E04977 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				06150A3420ADAAF300E04977 /* NativeInterface_iOS.mm */,
+				06150A3520ADAAF300E04977 /* NativeInterface_iOS.h */,
+				06150A3620ADAAF300E04977 /* NativeInterface.mm */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +414,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06150A3B20ADABD900E04977 /* Speech.framework */,
 				060C4CF92053B1D300316300 /* WatchConnectivity.framework */,
 				060C4CF82053B1D300316300 /* WatchKit.framework */,
 				294D0D631D0D56D500F7F5D4 /* CoreText.framework */,
@@ -436,6 +457,9 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				06150A3A20ADAB7400E04977 /* PrivateConfig.h */,
+				06150A3320ADAAF300E04977 /* iOS */,
+				06150A3720ADAAF300E04977 /* NativeInterface.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.mm */,
@@ -725,7 +749,9 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.mm in Sources */,
+				06150A3920ADAAF300E04977 /* NativeInterface.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				06150A3820ADAAF300E04977 /* NativeInterface_iOS.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				9AF7EDA420AC02B100EAAA0D /* MabeeeViewController.m in Sources */,
