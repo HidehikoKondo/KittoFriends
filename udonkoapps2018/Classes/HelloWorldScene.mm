@@ -117,10 +117,23 @@ bool HelloWorld::init()
         this->addChild(sprite, 0);
     }
      */
-    
+
+
+    //Ver3.x
+    auto labelBtnLabel = LabelTTF::create("ラベルボタン", "Arial", 15);
+    auto labelItem1 = MenuItemLabel::create(labelBtnLabel, CC_CALLBACK_0(HelloWorld::menuAction, this));
+
+    //後は同じ
+    auto menu2 = Menu::create(labelItem1,NULL);
+    this->addChild(menu2);
+
     return true;
 }
 
+
+void HelloWorld::menuAction(){
+    CCLOG("Hello!!");
+}
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {
