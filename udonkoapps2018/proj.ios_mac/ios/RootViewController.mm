@@ -74,16 +74,26 @@
     [btn setTitle:@"MaBeee" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(scanMabeee:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:btn];
+    
+    //MaBeee接続画面へ遷移するボタン
+    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn2.frame = CGRectMake(100, 10, 100, 30);
+    [btn2 setTitle:@"move" forState:UIControlStateNormal];
+    [btn2 addTarget:self action:@selector(move:) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:btn2];
 }
 
 - (void)scanMabeee:(id)object{
     MaBeeeScanViewController *vc = [[MaBeeeScanViewController alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
+}
 
-//こんな感じで接続中のMaBeeeの設定値を適用する
-//    for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
-//        device.pwmDuty = 100;
-//    }
+- (void)move:(id)object{
+    //こんな感じで接続中のMaBeeeの設定値を適用する
+    for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
+        device.pwmDuty = 50;
+    }
+    
 }
 
 
