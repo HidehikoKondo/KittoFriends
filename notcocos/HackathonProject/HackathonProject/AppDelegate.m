@@ -15,6 +15,8 @@
 
 @implementation AppDelegate
 
+float heartBeats = 0;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -82,10 +84,21 @@
     
     replyHandler(@{@"reply" : @"OK"});
     
+    NSLog(@"%@",message);
+    
+    int i = rand()%10 + 1;
+    
+    
+    if( [[message objectForKey:@"message"] isEqualToString:@"HIGH"]){
+        NSLog(@"%f", 100.0f + i);
+        heartBeats = 100.0f + i;
+    }else{
+        NSLog(@"%f", 70.0f + i);
+        heartBeats = 70.0f + i;
+    }
+    
     //[self speech:@"寝たら死ぬぞ"];
-    
-    
-    [self sendMessageForWatch: @"123"];
+   // [self sendMessageForWatch: @"123"];
 }
 
 
@@ -119,32 +132,32 @@
 
 
 
-//
-//-(void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply{
-//    
-//    //送られてきたdictionaryのデータを取り出す
-//    NSString *message = [userInfo objectForKey:@"message"];
-//    
-//    //WatchAppに返すデータを作成
-//    NSDictionary *applicationData = @{@"reply":@"ダイアログを表示しました"};
-//    reply(applicationData);
-//    
-//    
-//    //アラート表示
-//    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Message"
-//                                                                message:message
-//                                                         preferredStyle:UIAlertControllerStyleAlert];
-//    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-//                                                       style:UIAlertActionStyleDefault
-//                                                     handler:^(UIAlertAction *action) {
-//                                                         
-//                                                         
-//                                                     }
-//                               ];
-//    [ac addAction:okAction];
-//    [self.window.rootViewController presentViewController:ac animated:YES completion:nil];
-//}
-//
+
+-(void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply{
+    
+    //送られてきたdictionaryのデータを取り出す
+    NSString *message = [userInfo objectForKey:@"message"];
+    
+    //WatchAppに返すデータを作成
+    NSDictionary *applicationData = @{@"reply":@"ダイアログを表示しました"};
+    reply(applicationData);
+    
+    
+    //アラート表示
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Message"
+                                                                message:message
+                                                         preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action) {
+                                                         
+                                                         
+                                                     }
+                               ];
+    [ac addAction:okAction];
+    [self.window.rootViewController presentViewController:ac animated:YES completion:nil];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

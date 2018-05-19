@@ -206,7 +206,7 @@ static AppDelegate s_sharedApplication;
 //メッセージ送信 watchへ
 - (void)sendMessageForWatch:(NSString *)message {
     NSLog(@"----sendMessageForWatch----");
-    NSLog(message);
+    NSLog(message);f
     
     
     if ([[WCSession defaultSession] isReachable])
