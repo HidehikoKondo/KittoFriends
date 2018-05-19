@@ -163,7 +163,7 @@ void HelloWorld::post(float dt)
     const static std::string expressions_url = backend_url + "expressions";
     
     // 心拍数結果保存
-    const static std::string herts_url = backend_url + "hearts";
+    const static std::string hearts_url = backend_url + "hearts";
     
     // Azure感情解析
     const static std::string azure_url = "https://azure.microsoft.com/ja-jp/services/cognitive-services/emotion/";
@@ -171,19 +171,30 @@ void HelloWorld::post(float dt)
     // POST
     auto request = new cocos2d::network::HttpRequest();
     
-    // たたくURL
-    std::string url = "http://localhost/";
-    request->setUrl(url.c_str());
-    request->setRequestType(cocos2d::network::HttpRequest::Type::POST);
+    auto setUrl = [request](std::string url)
+    {
+        request->setUrl(url.c_str());
+        request->setRequestType(cocos2d::network::HttpRequest::Type::POST);
+    };
     
-    // ヘッダの設定
-    std::vector<std::string> headers;
-    headers.push_back("Content-Type: application/json");
-    request->setHeaders(headers);
-    std::string val = "1";
-    std::string requestJson = "[{\"key\":\"" + val + "\"}]";
-    const char * jsonBuffer = requestJson.c_str();
-    request->setRequestData(jsonBuffer, std::strlen(jsonBuffer));
+    // 心拍数をPOSTする
+    setUrl(hearts_url);
+    
+    auto postHeart = [request](float val)
+    {
+        // ヘッダの設定
+        std::vector<std::string> headers;
+        headers.push_back("Content-Type: application/json");
+        request->setHeaders(headers);
+        
+        std::string requestJson = "[{\"beat\":\"" + std::to_string(val) + "\"}]";
+        CCLOG("@@ 心拍数: %s", requestJson.c_str());
+        const char * jsonBuffer = requestJson.c_str();
+        request->setRequestData(jsonBuffer, std::strlen(jsonBuffer));
+    };
+    
+    postHeart(this->heart_beats);
+
     request->setResponseCallback([this](cocos2d::network::HttpClient* client, cocos2d::network::HttpResponse* response) {
         CCLOG("@@ ResponseCode:%ld %s", response->getResponseCode(), response->getHttpRequest()->getUrl());
         
@@ -202,6 +213,8 @@ void HelloWorld::post(float dt)
     client->enableCookies(nullptr);
     client->send(request);
     // client->destroyInstance();
+    
+    
 }
 
 void HelloWorld::speech(){
