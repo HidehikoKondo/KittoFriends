@@ -8,7 +8,7 @@ class HelloWorld : public cocos2d::Scene
 public:
     
     void setHeartBeats(float);
-    float heart_beats = 0.0f;
+    float heart_beats;
     
     static cocos2d::Scene* createScene();
 
