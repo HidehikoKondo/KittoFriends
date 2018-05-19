@@ -464,13 +464,40 @@
 }
 
 
+- (IBAction)goodButton:(id)sender {
+    [self good];
+}
+
+- (IBAction)badButton:(id)sender {
+    [self bad];
+}
+
 -(void)good{
-    
+    for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
+        int speed = 100;
+        if([device.name isEqualToString:@"UDONKONET"]){
+            device.pwmDuty = speed * 0.7;
+        }else{
+            device.pwmDuty = speed;
+        }
+    }
 }
 
 -(void)bad{
-    
+    for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
+        int speed = 50;
+        if([device.name isEqualToString:@"UDONKONET"]){
+            device.pwmDuty = speed * 0.8;
+        }else{
+            device.pwmDuty = speed;
+        }
+    }
 }
 
+- (IBAction)stopbutton:(id)sender {
+    for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
+        device.pwmDuty = 0;
+    }
+}
 
 @end
