@@ -187,7 +187,7 @@ void HelloWorld::post(float dt)
         headers.push_back("Content-Type: application/json");
         request->setHeaders(headers);
         
-        std::string requestJson = "[{\"beat\":\"" + std::to_string(val) + "\"}]";
+        std::string requestJson = "{\"beat\":1.0}";//{\"beat\":" + std::to_string(val) + "}";
         CCLOG("@@ 心拍数: %s", requestJson.c_str());
         const char * jsonBuffer = requestJson.c_str();
         request->setRequestData(jsonBuffer, std::strlen(jsonBuffer));
