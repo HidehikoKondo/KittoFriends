@@ -18,9 +18,27 @@
 
 float heartBeats = 0;
 
+NSTimer *_timer = nil;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        
+        NSString *url = @"http://backend.cactacea.io/friend";
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [manager GET:url parameters:nil progress:nil   // GETがPOSTに paramatersがnilからjsonに変わった
+             success:^(NSURLSessionTask *task, id responseObject) {
+                 // GETに成功した場合の処理
+                 NSLog(@"友達レベル %@", [responseObject valueForKey:@"value"]);
+             } failure:^(NSURLSessionTask *operation, NSError *error) {
+                 // エラーの場合の処理
+                 NSLog(@"失敗");
+             }
+         ];
+        
+    }];
     
     //Watchとのセッション確立
     if ([WCSession isSupported]) {
