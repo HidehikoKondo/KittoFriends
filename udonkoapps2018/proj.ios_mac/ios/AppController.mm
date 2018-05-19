@@ -33,6 +33,7 @@
 #import "NativeInterface_iOS.h"
 #import "AVFoundation/AVFoundation.h"
 
+#include "HelloWorldScene.h";
 
 @implementation AppController
 
@@ -187,9 +188,13 @@ static AppDelegate s_sharedApplication;
     
     if( [[message objectForKey:@"message"] isEqualToString:@"HIGH"]){
         NSLog(@"%f", 100.0f);
+        HelloWorld().setHeartBeats(100.0f);
     }else{
          NSLog(@"%f", 70.0f);
+        HelloWorld().setHeartBeats(70.0f);
     }
+    
+    
     
     //[self speech:@"繋がったよ！！"];
     

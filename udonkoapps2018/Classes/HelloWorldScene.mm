@@ -137,6 +137,8 @@ bool HelloWorld::init()
     auto menu2 = Menu::create(labelItem1,NULL);
     this->addChild(menu2);
     
+    heart_beats = 0.0f;
+    
     return true;
 }
 
