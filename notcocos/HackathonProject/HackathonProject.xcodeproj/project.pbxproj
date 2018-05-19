@@ -291,8 +291,6 @@
 				06FF19EA1EC84F44009B6712 /* Resources */,
 				06FF1A311EC84F45009B6712 /* Embed Watch Content */,
 				06FF1A381EC84FBE009B6712 /* Embed Frameworks */,
-				AD5F52F1B885892A4326D200 /* [CP] Embed Pods Frameworks */,
-				3D93D8037516EB8A3A65CD02 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -312,7 +310,6 @@
 				06FF1A011EC84F44009B6712 /* Resources */,
 				06FF1A2D1EC84F45009B6712 /* Embed App Extensions */,
 				4541467EA7CB800ADEE483B7 /* Frameworks */,
-				8254DE782CB788DA48705B7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,8 +329,6 @@
 				06FF1A0E1EC84F44009B6712 /* Sources */,
 				06FF1A0F1EC84F44009B6712 /* Frameworks */,
 				06FF1A101EC84F44009B6712 /* Resources */,
-				F43E64B508D61E8A6F04F65A /* [CP] Embed Pods Frameworks */,
-				1177F745863E9CFEEB5276AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -444,66 +439,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1177F745863E9CFEEB5276AB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonProject WatchKit Extension/Pods-HackathonProject WatchKit Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3D93D8037516EB8A3A65CD02 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonProject/Pods-HackathonProject-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8254DE782CB788DA48705B7D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonProject WatchKit App/Pods-HackathonProject WatchKit App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AD5F52F1B885892A4326D200 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonProject/Pods-HackathonProject-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C310D73E509783B3FE0A1F23 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -538,21 +473,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F43E64B508D61E8A6F04F65A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonProject WatchKit Extension/Pods-HackathonProject WatchKit Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

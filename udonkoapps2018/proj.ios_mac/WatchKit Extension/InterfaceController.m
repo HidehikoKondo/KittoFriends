@@ -73,6 +73,9 @@
     }
 }
 
+-(IBAction)isFriends:(id)sender{
+    
+};
 
 
 @end

@@ -420,6 +420,9 @@
 
 
 
+
+
+
 # pragma mark - アラート
 //アラートを表示するだけ
 - (void)showAlert:(NSString*)title message:(NSString*)message{
@@ -440,6 +443,14 @@
     [_statusText setText:message];
 }
 
+
+-(void)good{
+    
+}
+
+-(void)bad{
+    
+}
 
 
 @end

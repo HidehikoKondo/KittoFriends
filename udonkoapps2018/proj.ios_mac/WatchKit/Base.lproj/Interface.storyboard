@@ -24,6 +24,7 @@
                                 <action selector="heartbeatLow:" destination="AgC-eL-Hgc" id="BYe-lf-8iC"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="お友達判定" id="aaH-qo-7B6"/>
                     </items>
                 </controller>
             </objects>
