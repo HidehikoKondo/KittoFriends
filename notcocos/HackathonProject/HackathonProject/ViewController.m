@@ -485,11 +485,11 @@
 
 -(void)bad{
     for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
-        int speed = 50;
+        
         if([device.name isEqualToString:@"UDONKONET"]){
-            device.pwmDuty = speed * 0.8;
+            device.pwmDuty =  40;
         }else{
-            device.pwmDuty = speed;
+            device.pwmDuty = 30;
         }
     }
 }
