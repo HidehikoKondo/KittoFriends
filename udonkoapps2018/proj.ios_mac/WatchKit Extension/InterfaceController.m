@@ -31,6 +31,18 @@
     [super didDeactivate];
 }
 
+
+//ボタンをタップで通知
+-(IBAction)heartbeatHigh:(id)sender{
+    NSLog(@"心拍数HIGH");
+    //[self submit:@"SWING"];
+}
+
+-(IBAction)heartbeatLow:(id)sender{
+    NSLog(@"心拍数LOW");
+    //[self submit:@"SWING"];
+}
+
 @end
 
 
