@@ -21,6 +21,13 @@
     [super awakeWithContext:context];
 
     // Configure interface objects here.
+    
+    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
 }
 
 - (void)willActivate {
@@ -60,6 +67,7 @@
     
     
     if ([[WCSession defaultSession] isReachable]) {
+        NSLog(@"繋がった");
         [[WCSession defaultSession] sendMessage:applicationDict
                                    replyHandler:^(NSDictionary *replyHandler) {
                                        // do something
@@ -73,9 +81,18 @@
     }else{
         NSLog(@"つながってないよ");
         [_textLabel setText:@"つながってないよ"];
+
     }
 }
 
+
+- (IBAction)heartbeatHigh:(id)sender {
+    [self submit:@"HIGH"];
+}
+
+- (IBAction)heartbeatLow:(id)sender {
+    [self submit:@"LOW"];
+}
 
 
 

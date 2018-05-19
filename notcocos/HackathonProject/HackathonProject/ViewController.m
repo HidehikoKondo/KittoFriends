@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import <MEMELib/MEMELib.h>
+#import "AFNetworking.h"
+
 @import MaBeeeSDK;
 
 @interface ViewController ()
@@ -51,7 +53,7 @@
     //端末のスリープを無効にする
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 
-    
+
 
 }
 
@@ -174,7 +176,7 @@
     //瞬き検出（テストコード）
     self.latestRealTimeData = data;
     NSLog(@"%@", data);
-    
+
     
     
     /*
@@ -201,27 +203,48 @@
      @property float accY;
      @property float accZ;
      */
+
     
-    
-    [self showStatusLabel: [NSString stringWithFormat:
-                            @"blinkSpeed : %d \nblinkStrength : %d \naccX : %f \naccY : %f \naccZ : %f \nroll : %f \npitch : %f \nyaw : %f \neyeMoveUp : %d \neyeMoveDown : %d \neyeMoveLeft : %d \neyeMoveRight : %d \npowerLeft : %d \nnoiseStatus : %d \nisWalking : %d \nfitError : %d",
-                            [self.latestRealTimeData blinkSpeed] ,
-                            [self.latestRealTimeData blinkStrength],
-                            [self.latestRealTimeData accX],
-                            [self.latestRealTimeData accY],
-                            [self.latestRealTimeData accZ],
-                            [self.latestRealTimeData roll],
-                            [self.latestRealTimeData pitch],
-                            [self.latestRealTimeData yaw],
-                            [self.latestRealTimeData eyeMoveUp],
-                            [self.latestRealTimeData eyeMoveDown],
-                            [self.latestRealTimeData eyeMoveLeft],
-                            [self.latestRealTimeData eyeMoveRight],
-                            [self.latestRealTimeData powerLeft],
-                            [self.latestRealTimeData noiseStatus],
-                            [self.latestRealTimeData isWalking],
-                            [self.latestRealTimeData fitError]
-                            ]];
+    static BOOL doing = false;
+
+    if (doing == false) {
+        doing = true;
+        NSDictionary *json = @{@"beat": [NSNumber numberWithFloat:[self.latestRealTimeData blinkStrength]]};
+        NSString *url = @"http://backend.cactacea.io/blinks";
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [manager POST:url parameters:json progress:nil   // GETがPOSTに paramatersがnilからjsonに変わった
+              success:^(NSURLSessionTask *task, id responseObject) {
+                  // POSTに成功した場合の処理
+                  doing = false;
+                  NSLog(@"成功");
+              } failure:^(NSURLSessionTask *operation, NSError *error) {
+                  doing = false;
+                  // エラーの場合の処理
+                  NSLog(@"失敗");
+              }
+         ];
+    }
+
+//    [self showStatusLabel: [NSString stringWithFormat:
+//                            @"blinkSpeed : %d \nblinkStrength : %d \naccX : %f \naccY : %f \naccZ : %f \nroll : %f \npitch : %f \nyaw : %f \neyeMoveUp : %d \neyeMoveDown : %d \neyeMoveLeft : %d \neyeMoveRight : %d \npowerLeft : %d \nnoiseStatus : %d \nisWalking : %d \nfitError : %d",
+//                            [self.latestRealTimeData blinkSpeed] ,
+//                            [self.latestRealTimeData blinkStrength],
+//                            [self.latestRealTimeData accX],
+//                            [self.latestRealTimeData accY],
+//                            [self.latestRealTimeData accZ],
+//                            [self.latestRealTimeData roll],
+//                            [self.latestRealTimeData pitch],
+//                            [self.latestRealTimeData yaw],
+//                            [self.latestRealTimeData eyeMoveUp],
+//                            [self.latestRealTimeData eyeMoveDown],
+//                            [self.latestRealTimeData eyeMoveLeft],
+//                            [self.latestRealTimeData eyeMoveRight],
+//                            [self.latestRealTimeData powerLeft],
+//                            [self.latestRealTimeData noiseStatus],
+//                            [self.latestRealTimeData isWalking],
+//                            [self.latestRealTimeData fitError]
+//                            ]];
     
     //    NSLog(@"blinkSpeed / blinkStrength: %d / %d", [self.latestRealTimeData blinkSpeed] , [self.latestRealTimeData blinkStrength]);
     
