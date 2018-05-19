@@ -6,12 +6,19 @@
 class HelloWorld : public cocos2d::Scene
 {
 public:
+    
+    void setHeartBeats(float);
+    float heart_beats = 0.0f;
+    
     static cocos2d::Scene* createScene();
 
     virtual bool init();
 
+    void post(float);
     void menuAction();
     void speech();
+    
+    void update(float);
 
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
