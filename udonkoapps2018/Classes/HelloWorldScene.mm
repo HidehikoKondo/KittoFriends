@@ -92,8 +92,7 @@ bool HelloWorld::init()
     auto client = cocos2d::network::HttpClient::getInstance();
     client->enableCookies(nullptr);
     client->send(request);
-    client->destroyInstance();
-
+    // client->destroyInstance();
 
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
