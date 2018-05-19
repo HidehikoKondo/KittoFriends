@@ -94,6 +94,16 @@
     [self submit:@"LOW"];
 }
 
+- (IBAction)good:(id)sender {
+    [self submit:@"GOOD"];
+}
+
+- (IBAction)bad:(id)sender {
+    [self submit:@"BAD"];
+}
+- (IBAction)stop:(id)sender {
+    [self submit:@"STOP"];
+}
 
 
 

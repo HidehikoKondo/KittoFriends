@@ -17,6 +17,9 @@
 
 @interface ViewController : UIViewController<MEMELibDelegate, UIApplicationDelegate, AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate, WCSessionDelegate>
 
+-(void)good;
+-(void)bad;
+-(void)stop;
 
 @end
 

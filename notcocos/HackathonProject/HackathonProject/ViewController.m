@@ -495,9 +495,14 @@
 }
 
 - (IBAction)stopbutton:(id)sender {
+    [self stop];
+}
+
+-(void)stop{
     for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
         device.pwmDuty = 0;
     }
+
 }
 
 @end

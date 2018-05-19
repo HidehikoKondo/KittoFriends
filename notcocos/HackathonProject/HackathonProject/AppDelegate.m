@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <MEMELib/MEMELib.h>
 #import "AFNetworking.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -109,10 +110,19 @@ NSTimer *_timer = nil;
     if( [[message objectForKey:@"message"] isEqualToString:@"HIGH"]){
         NSLog(@"%f", 100.0f + i);
         heartBeats = 100.0f + i;
-    }else{
+    }else if( [[message objectForKey:@"message"] isEqualToString:@"HIGH"]){
         NSLog(@"%f", 70.0f + i);
         heartBeats = 70.0f + i;
     }
+    
+    if( [[message objectForKey:@"message"] isEqualToString:@"GOOD"]){
+         [(ViewController *)self.window.rootViewController good];
+    } else if( [[message objectForKey:@"message"] isEqualToString:@"BAD"]){
+        [(ViewController *)self.window.rootViewController bad];
+    } else if( [[message objectForKey:@"message"] isEqualToString:@"STOP"]){
+        [(ViewController *)self.window.rootViewController stop];
+    }
+
     
     NSDictionary *json = @{@"beat": [NSNumber numberWithFloat:heartBeats]};
     NSString *url = @"http://backend.cactacea.io/hearts";
@@ -188,6 +198,7 @@ NSTimer *_timer = nil;
                                ];
     [ac addAction:okAction];
     [self.window.rootViewController presentViewController:ac animated:YES completion:nil];
+    
 }
 
 
