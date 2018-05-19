@@ -63,6 +63,26 @@
 
 
 
+- (IBAction)selectImage:(id)sender {
+    //UIImagePickerのソースの選択。今回はカメラロールから。
+    UIImagePickerControllerSourceType sourseType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = sourseType;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    //infoに選んだ写真が入っているので取得
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+       // self.imageView.image = image;
+    }];
+}
+
 
 #pragma -mark JINS MEME用
 # pragma mark MEME接続関連
