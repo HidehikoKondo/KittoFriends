@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <MEMELib/MEMELib.h>
+#import "AFNetworking.h"
 
 @interface AppDelegate ()
 
@@ -66,9 +67,7 @@ float heartBeats = 0;
     
     _memeValue = testData;
     
-    
-    
-    
+
     return YES;
 }
 
@@ -96,6 +95,21 @@ float heartBeats = 0;
         NSLog(@"%f", 70.0f + i);
         heartBeats = 70.0f + i;
     }
+    
+    NSDictionary *json = @{@"beat": [NSNumber numberWithFloat:heartBeats]};
+    NSString *url = @"http://backend.cactacea.io/hearts";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager POST:url parameters:json progress:nil   // GETがPOSTに paramatersがnilからjsonに変わった
+          success:^(NSURLSessionTask *task, id responseObject) {
+              // POSTに成功した場合の処理
+              NSLog(@"成功");
+          } failure:^(NSURLSessionTask *operation, NSError *error) {
+              // エラーの場合の処理
+              NSLog(@"失敗");
+          }
+     ];
+
     
     //[self speech:@"寝たら死ぬぞ"];
    // [self sendMessageForWatch: @"123"];
