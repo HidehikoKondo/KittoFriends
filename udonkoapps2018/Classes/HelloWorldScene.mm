@@ -43,6 +43,7 @@ bool HelloWorld::init()
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
     // RapidJSON example
+    // JSON パースするやつ
     auto json = "{ \"hoge\" : \"foobar\" }";
     rapidjson::Document document;
     document.Parse<rapidjson::ParseFlag::kParseDefaultFlags>(json);
@@ -57,29 +58,41 @@ bool HelloWorld::init()
     NSString *nsStr = [NSString stringWithUTF8String:str.c_str()];
     auto jsonLabel = cocos2d::Label::createWithSystemFont([nsStr UTF8String], "Helvetica", 36);
     jsonLabel->setPosition(visibleSize / 2);
-    this->addChild(jsonLabel);
+//    this->addChild(jsonLabel);
     
     // POST
     auto request = new cocos2d::network::HttpRequest();
+    // たたくURL
     std::string url = "http://localhost/";
     request->setUrl(url.c_str());
     request->setRequestType(cocos2d::network::HttpRequest::Type::POST);
+    // ヘッダの設定
+    std::vector<std::string> headers;
+    headers.push_back("Content-Type: application/json");
+    request->setHeaders(headers);
+    std::string val = "1";
+    std::string requestJson = "[{\"key\":\"" + val + "\"}]";
+    const char * jsonBuffer = requestJson.c_str();
+    request->setRequestData(jsonBuffer, std::strlen(jsonBuffer));
     request->setResponseCallback([this](cocos2d::network::HttpClient* client, cocos2d::network::HttpResponse* response)
     {
         CCLOG("@@ ResponseCode:%ld %s", response->getResponseCode(), response->getHttpRequest()->getUrl());
         
         if (response->isSucceed())
         {
+            // レスポンスの取得に成功したらここの処理
             std::vector<char> * buffer = response->getResponseData();
             std::string s;
             std::copy(buffer->begin(), buffer->end(), std::back_inserter(s));
+            // レスポンスをログ表示
             CCLOG("@@ s: %s", s.c_str());
         }
     });
+    // 送信してインスタンスは破棄
     auto client = cocos2d::network::HttpClient::getInstance();
     client->enableCookies(nullptr);
     client->send(request);
-
+    // client->destroyInstance();
 
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
