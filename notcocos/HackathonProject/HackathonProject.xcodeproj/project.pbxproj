@@ -28,8 +28,11 @@
 		06FF1A3B1EC853D6009B6712 /* MEMELib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06FF1A391EC853D6009B6712 /* MEMELib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		06FF1A3E1EC8B5B4009B6712 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FF1A3D1EC8B5B4009B6712 /* AVFoundation.framework */; };
 		06FF1A401EC8B5BF009B6712 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FF1A3F1EC8B5BF009B6712 /* AudioToolbox.framework */; };
+		13D65A39182C24F39ED00ADF /* libPods-HackathonProject WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEAB2273827F23EE2572F93 /* libPods-HackathonProject WatchKit Extension.a */; };
+		4AF0B2B06273343B0EEBAFD3 /* libPods-HackathonProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D693528E486697CF7855CFD /* libPods-HackathonProject.a */; };
 		9A749D4B1EC97777001A6BAD /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A749D491EC97777001A6BAD /* WatchConnectivity.framework */; };
 		9A749D4C1EC97777001A6BAD /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A749D4A1EC97777001A6BAD /* WatchKit.framework */; };
+		FEF4D39044EE6AA1AB3DF77C /* libPods-HackathonProject WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 557281C0C26F138EC1B9FFD1 /* libPods-HackathonProject WatchKit App.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,8 +120,17 @@
 		06FF1A391EC853D6009B6712 /* MEMELib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MEMELib.framework; sourceTree = "<group>"; };
 		06FF1A3D1EC8B5B4009B6712 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		06FF1A3F1EC8B5BF009B6712 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0CA93153ADD4EF4084199997 /* Pods-HackathonProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackathonProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackathonProject/Pods-HackathonProject.debug.xcconfig"; sourceTree = "<group>"; };
+		557281C0C26F138EC1B9FFD1 /* libPods-HackathonProject WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackathonProject WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D6FC4728F3D880B83524DAA /* Pods-HackathonProject WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackathonProject WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackathonProject WatchKit Extension/Pods-HackathonProject WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		7CEAB2273827F23EE2572F93 /* libPods-HackathonProject WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackathonProject WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D693528E486697CF7855CFD /* libPods-HackathonProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackathonProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A749D491EC97777001A6BAD /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		9A749D4A1EC97777001A6BAD /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		BB253EB2A0E2B8EC3CD222FD /* Pods-HackathonProject WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackathonProject WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackathonProject WatchKit App/Pods-HackathonProject WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		C9CEEB7151BC1D4756EA8216 /* Pods-HackathonProject WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackathonProject WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackathonProject WatchKit App/Pods-HackathonProject WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		EBA94178AEDB7A0549C9731E /* Pods-HackathonProject WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackathonProject WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackathonProject WatchKit Extension/Pods-HackathonProject WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		F06E46323BE20680B954A652 /* Pods-HackathonProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackathonProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackathonProject/Pods-HackathonProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +144,7 @@
 				06FF1A3E1EC8B5B4009B6712 /* AVFoundation.framework in Frameworks */,
 				06FF1A3A1EC853D6009B6712 /* MEMELib.framework in Frameworks */,
 				06FF1A361EC84FBE009B6712 /* MaBeeeSDK.framework in Frameworks */,
+				4AF0B2B06273343B0EEBAFD3 /* libPods-HackathonProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +152,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D65A39182C24F39ED00ADF /* libPods-HackathonProject WatchKit Extension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4541467EA7CB800ADEE483B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEF4D39044EE6AA1AB3DF77C /* libPods-HackathonProject WatchKit App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +177,7 @@
 				06FF1A161EC84F45009B6712 /* HackathonProject WatchKit Extension */,
 				06FF19ED1EC84F44009B6712 /* Products */,
 				06FF1A3C1EC8B5B4009B6712 /* Frameworks */,
+				3E51FC421B4909B4EEBFF795 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,8 +258,24 @@
 				9A749D4A1EC97777001A6BAD /* WatchKit.framework */,
 				06FF1A3F1EC8B5BF009B6712 /* AudioToolbox.framework */,
 				06FF1A3D1EC8B5B4009B6712 /* AVFoundation.framework */,
+				7D693528E486697CF7855CFD /* libPods-HackathonProject.a */,
+				557281C0C26F138EC1B9FFD1 /* libPods-HackathonProject WatchKit App.a */,
+				7CEAB2273827F23EE2572F93 /* libPods-HackathonProject WatchKit Extension.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E51FC421B4909B4EEBFF795 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0CA93153ADD4EF4084199997 /* Pods-HackathonProject.debug.xcconfig */,
+				F06E46323BE20680B954A652 /* Pods-HackathonProject.release.xcconfig */,
+				BB253EB2A0E2B8EC3CD222FD /* Pods-HackathonProject WatchKit App.debug.xcconfig */,
+				C9CEEB7151BC1D4756EA8216 /* Pods-HackathonProject WatchKit App.release.xcconfig */,
+				EBA94178AEDB7A0549C9731E /* Pods-HackathonProject WatchKit Extension.debug.xcconfig */,
+				6D6FC4728F3D880B83524DAA /* Pods-HackathonProject WatchKit Extension.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,11 +285,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06FF1A321EC84F45009B6712 /* Build configuration list for PBXNativeTarget "HackathonProject" */;
 			buildPhases = (
+				C310D73E509783B3FE0A1F23 /* [CP] Check Pods Manifest.lock */,
 				06FF19E81EC84F44009B6712 /* Sources */,
 				06FF19E91EC84F44009B6712 /* Frameworks */,
 				06FF19EA1EC84F44009B6712 /* Resources */,
 				06FF1A311EC84F45009B6712 /* Embed Watch Content */,
 				06FF1A381EC84FBE009B6712 /* Embed Frameworks */,
+				AD5F52F1B885892A4326D200 /* [CP] Embed Pods Frameworks */,
+				3D93D8037516EB8A3A65CD02 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,8 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06FF1A2E1EC84F45009B6712 /* Build configuration list for PBXNativeTarget "HackathonProject WatchKit App" */;
 			buildPhases = (
+				F0F734506FC73AFB4EA87877 /* [CP] Check Pods Manifest.lock */,
 				06FF1A011EC84F44009B6712 /* Resources */,
 				06FF1A2D1EC84F45009B6712 /* Embed App Extensions */,
+				4541467EA7CB800ADEE483B7 /* Frameworks */,
+				8254DE782CB788DA48705B7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,9 +328,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06FF1A2A1EC84F45009B6712 /* Build configuration list for PBXNativeTarget "HackathonProject WatchKit Extension" */;
 			buildPhases = (
+				0CA14CD1C2839CC99CCDB114 /* [CP] Check Pods Manifest.lock */,
 				06FF1A0E1EC84F44009B6712 /* Sources */,
 				06FF1A0F1EC84F44009B6712 /* Frameworks */,
 				06FF1A101EC84F44009B6712 /* Resources */,
+				F43E64B508D61E8A6F04F65A /* [CP] Embed Pods Frameworks */,
+				1177F745863E9CFEEB5276AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -376,6 +424,138 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CA14CD1C2839CC99CCDB114 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackathonProject WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1177F745863E9CFEEB5276AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonProject WatchKit Extension/Pods-HackathonProject WatchKit Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D93D8037516EB8A3A65CD02 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonProject/Pods-HackathonProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8254DE782CB788DA48705B7D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonProject WatchKit App/Pods-HackathonProject WatchKit App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD5F52F1B885892A4326D200 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonProject/Pods-HackathonProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C310D73E509783B3FE0A1F23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackathonProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0F734506FC73AFB4EA87877 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackathonProject WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F43E64B508D61E8A6F04F65A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackathonProject WatchKit Extension/Pods-HackathonProject WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06FF19E81EC84F44009B6712 /* Sources */ = {
@@ -534,6 +714,7 @@
 		};
 		06FF1A2B1EC84F45009B6712 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBA94178AEDB7A0549C9731E /* Pods-HackathonProject WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				DEVELOPMENT_TEAM = 7JKB5AMAKP;
@@ -550,6 +731,7 @@
 		};
 		06FF1A2C1EC84F45009B6712 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D6FC4728F3D880B83524DAA /* Pods-HackathonProject WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				DEVELOPMENT_TEAM = 7JKB5AMAKP;
@@ -566,6 +748,7 @@
 		};
 		06FF1A2F1EC84F45009B6712 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB253EB2A0E2B8EC3CD222FD /* Pods-HackathonProject WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7JKB5AMAKP;
@@ -582,6 +765,7 @@
 		};
 		06FF1A301EC84F45009B6712 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9CEEB7151BC1D4756EA8216 /* Pods-HackathonProject WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7JKB5AMAKP;
@@ -598,6 +782,7 @@
 		};
 		06FF1A331EC84F45009B6712 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CA93153ADD4EF4084199997 /* Pods-HackathonProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7JKB5AMAKP;
@@ -615,6 +800,7 @@
 		};
 		06FF1A341EC84F45009B6712 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F06E46323BE20680B954A652 /* Pods-HackathonProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7JKB5AMAKP;
