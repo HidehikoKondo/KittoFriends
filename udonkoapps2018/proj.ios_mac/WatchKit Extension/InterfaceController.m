@@ -19,6 +19,12 @@
     [super awakeWithContext:context];
     NSLog(@"objective-c");
     // Configure interface objects here.
+    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
 }
 
 - (void)willActivate {
@@ -32,16 +38,42 @@
 }
 
 
+
 //ボタンをタップで通知
 -(IBAction)heartbeatHigh:(id)sender{
     NSLog(@"心拍数HIGH");
-    //[self submit:@"SWING"];
+    [self submit:@"HIGH"];
 }
 
 -(IBAction)heartbeatLow:(id)sender{
     NSLog(@"心拍数LOW");
-    //[self submit:@"SWING"];
+    [self submit:@"LOW"];
 }
+
+
+-(void)submit:(NSString *)message{
+    NSDictionary *applicationDict = @{@"message" : message};
+    [[WCSession defaultSession] updateApplicationContext:applicationDict error:nil];
+    
+    
+    if ([[WCSession defaultSession] isReachable]) {
+        NSLog(@"繋がった");
+        [[WCSession defaultSession] sendMessage:applicationDict
+                                   replyHandler:^(NSDictionary *replyHandler) {
+                                       // do something
+                                       NSLog(@"送った/ %@",message);
+                                   }
+                                   errorHandler:^(NSError *error) {
+                                       // do something
+                                       NSLog(@"送れなかった・・・orz");
+                                   }
+         ];
+    }else{
+        NSLog(@"つながってないよ");
+    }
+}
+
+
 
 @end
 
