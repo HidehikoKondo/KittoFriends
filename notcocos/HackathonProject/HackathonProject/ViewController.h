@@ -20,6 +20,7 @@
 -(void)good;
 -(void)bad;
 -(void)stop;
+-(void)changeImage:(float)val;
 
 @end
 

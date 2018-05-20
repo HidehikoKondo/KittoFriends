@@ -35,48 +35,55 @@ NSTimer *_timer = nil;
                  success:^(NSURLSessionTask *task, id responseObject) {
                      // GETに成功した場合の処理
                      NSLog(@"友達レベル %@", [responseObject valueForKey:@"value"]);
+                     float i = [[responseObject valueForKey:@"value"] floatValue];
+                     NSLog(@"%f", i);
+                     [(ViewController *)self.window.rootViewController changeImage:i];
+
                  } failure:^(NSURLSessionTask *operation, NSError *error) {
                      // エラーの場合の処理
                      NSLog(@"失敗");
+                     
+                     //[(ViewController *)self.window.rootViewController changeImage:101];
+
                  }
              ];
 
         }
         
-        {
-
-            NSDictionary *json = @{@"url": @"https://d2v9k5u4v94ulw.cloudfront.net/small_light(dw=600,dh=600,da=s,ds=s,cw=600,ch=600,cc=FFFFFF)/assets/images/2172145/original/26165202_1493939910702475_1381863765734050498_n.jpg?1522162171"};
-            NSString *url = @"https://eastasia.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=emotion";
-            AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-            manager.requestSerializer = [AFJSONRequestSerializer serializer];
-            [manager.requestSerializer setValue:@"ec334620b3c64c5b92077021503b839b" forHTTPHeaderField:@"Ocp-Apim-Subscription-Key"];
-            [manager POST:url parameters:json progress:nil   // GETがPOSTに paramatersがnilからjsonに変わった
-                  success:^(NSURLSessionTask *task, id responseObject) {
-                      // POSTに成功した場合の処理
-
-                      NSDictionary *json = responseObject[0]; //@{@"beat": [NSNumber numberWithFloat:heartBeats]};
-                      NSString *url = @"http://backend.cactacea.io/expressions";
-                      AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-                      manager.requestSerializer = [AFJSONRequestSerializer serializer];
-                      [manager POST:url parameters:json progress:nil   // GETがPOSTに paramatersがnilからjsonに変わった
-                            success:^(NSURLSessionTask *task, id responseObject) {
-                                // POSTに成功した場合の処理
-                                NSLog(@"成功");
-                            } failure:^(NSURLSessionTask *operation, NSError *error) {
-                                // エラーの場合の処理
-                                NSLog(@"失敗");
-                            }
-                       ];
-
-                      
-                      
-                  } failure:^(NSURLSessionTask *operation, NSError *error) {
-                      // エラーの場合の処理
-                      NSLog(@"失敗");
-                  }
-             ];
-
-        }
+//        {
+//
+//            NSDictionary *json = @{@"url": @"https://d2v9k5u4v94ulw.cloudfront.net/small_light(dw=600,dh=600,da=s,ds=s,cw=600,ch=600,cc=FFFFFF)/assets/images/2172145/original/26165202_1493939910702475_1381863765734050498_n.jpg?1522162171"};
+//            NSString *url = @"https://eastasia.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=emotion";
+//            AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//            manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//            [manager.requestSerializer setValue:@"ec334620b3c64c5b92077021503b839b" forHTTPHeaderField:@"Ocp-Apim-Subscription-Key"];
+//            [manager POST:url parameters:json progress:nil   // GETがPOSTに paramatersがnilからjsonに変わった
+//                  success:^(NSURLSessionTask *task, id responseObject) {
+//                      // POSTに成功した場合の処理
+//
+//                      NSDictionary *json = responseObject[0]; //@{@"beat": [NSNumber numberWithFloat:heartBeats]};
+//                      NSString *url = @"http://backend.cactacea.io/expressions";
+//                      AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//                      manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//                      [manager POST:url parameters:json progress:nil   // GETがPOSTに paramatersがnilからjsonに変わった
+//                            success:^(NSURLSessionTask *task, id responseObject) {
+//                                // POSTに成功した場合の処理
+//                                NSLog(@"成功");
+//                            } failure:^(NSURLSessionTask *operation, NSError *error) {
+//                                // エラーの場合の処理
+//                                NSLog(@"失敗");
+//                            }
+//                       ];
+//
+//
+//
+//                  } failure:^(NSURLSessionTask *operation, NSError *error) {
+//                      // エラーの場合の処理
+//                      NSLog(@"失敗");
+//                  }
+//             ];
+//
+//        }
         
     }];
     
@@ -207,10 +214,6 @@ NSTimer *_timer = nil;
          ];
     }
 }
-
-
-
-
 
 
 

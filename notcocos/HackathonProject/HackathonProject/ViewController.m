@@ -14,6 +14,7 @@
 @import MaBeeeSDK;
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *spanyanImageView;
 
 //周辺のbluetooth機器を見つけたらこの配列に格納する
 @property (nonatomic, strong) NSMutableArray *peripherals;
@@ -505,7 +506,13 @@
     for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
         device.pwmDuty = 0;
     }
-
 }
 
+-(void)changeImage:(float)val{
+    if(val > 100){
+        [_spanyanImageView setImage:[UIImage imageNamed:@"friends-good"]];
+    }else{
+        [_spanyanImageView setImage:[UIImage imageNamed:@"friends-bad"]];
+    }
+}
 @end

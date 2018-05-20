@@ -73,6 +73,7 @@
                     <connections>
                         <outlet property="indicator" destination="69E-NQ-xPy" id="ecg-Oq-lQV"/>
                         <outlet property="memeSelectTableView" destination="ZTi-z7-GfW" id="PJa-hv-S3Y"/>
+                        <outlet property="spanyanImageView" destination="M5v-xT-TeM" id="FBN-zV-uyQ"/>
                         <outlet property="statusText" destination="Yp4-b1-odE" id="WyW-2o-Ttv"/>
                     </connections>
                 </viewController>
