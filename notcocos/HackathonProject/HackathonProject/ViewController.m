@@ -400,6 +400,9 @@
     //くるくる表示
     [_indicator setHidden:NO];
     [_memeSelectTableView setUserInteractionEnabled:NO];
+    
+    [_memeSelectTableView setHidden:YES];
+
 }
 
 

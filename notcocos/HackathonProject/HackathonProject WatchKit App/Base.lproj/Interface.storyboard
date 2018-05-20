@@ -32,6 +32,21 @@
                                 <action selector="heartbeatLow:" destination="AgC-eL-Hgc" id="UcE-2K-nNq"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="GOOD" id="a7T-eY-I9f">
+                            <connections>
+                                <action selector="good:" destination="AgC-eL-Hgc" id="EUM-7w-7qC"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="BAD" id="JXD-pq-VMz">
+                            <connections>
+                                <action selector="bad:" destination="AgC-eL-Hgc" id="yfC-m9-ZTs"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="STOP" id="wXx-NW-xwS">
+                            <connections>
+                                <action selector="stop:" destination="AgC-eL-Hgc" id="8IS-Q0-Ey2"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="textLabel" destination="oBM-yw-c2s" id="99p-Hy-oD0"/>
