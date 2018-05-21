@@ -156,7 +156,7 @@ NSTimer *_timer = nil;
     if( [[message objectForKey:@"message"] isEqualToString:@"HIGH"]){
         NSLog(@"%f", 100.0f + i);
         heartBeats = 100.0f + i;
-    }else if( [[message objectForKey:@"message"] isEqualToString:@"HIGH"]){
+    }else if( [[message objectForKey:@"message"] isEqualToString:@"LOW"]){
         NSLog(@"%f", 70.0f + i);
         heartBeats = 70.0f + i;
     }
@@ -167,6 +167,7 @@ NSTimer *_timer = nil;
         [(ViewController *)self.window.rootViewController bad];
     } else if( [[message objectForKey:@"message"] isEqualToString:@"STOP"]){
         [(ViewController *)self.window.rootViewController stop];
+        heartBeats = 0.0f;
     }
 
     

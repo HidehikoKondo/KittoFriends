@@ -489,7 +489,6 @@
 
 -(void)bad{
     for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
-        
         if([device.name isEqualToString:@"UDONKONET"]){
             device.pwmDuty =  40;
         }else{
@@ -511,8 +510,12 @@
 -(void)changeImage:(float)val{
     if(val > 100){
         [_spanyanImageView setImage:[UIImage imageNamed:@"friends-good"]];
-    }else{
+        [self good];
+    }else if(val <100 && val > 50){
         [_spanyanImageView setImage:[UIImage imageNamed:@"friends-bad"]];
+        [self bad];
+    }else{
+        [_spanyanImageView setImage:[UIImage imageNamed:@"friends-howareyou"]];
     }
 }
 @end
